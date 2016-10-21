@@ -56,3 +56,4 @@ To start deployment run:
 * **requiretty** should be switched off in **/etc/sudoers** file.
 * 2 interfaces must be present: one for private and one for **provider(public)** network.
 * at least one spare partition must be available for **cinder**( block storage ) service.
+* Disable firewall using iptables -F
