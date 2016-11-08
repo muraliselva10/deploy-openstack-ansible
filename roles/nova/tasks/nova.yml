@@ -10,6 +10,9 @@
   with_items:
     - nova.conf
 
+- name: Set qemu instead of kvm
+  command: crudini --set --existing /etc/nova/nova-compute.conf libvirt virt_type qemu
+
 - name: start services
   tags: service
   service: name={{ item }} state=restarted enabled=yes
