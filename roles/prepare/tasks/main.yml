@@ -1,0 +1,9 @@
+- name: install mitaka
+  package: name={{ item }} state=latest
+  with_items:
+    - python-openstackclient
+
+- name: generate environment
+  lineinfile: line="export {{ item.key }}={{ item.value }}" dest=/root/openstack-admin.rc state=present create=yes
+  tags: config
+  with_dict: "{{ openstack_env }}"

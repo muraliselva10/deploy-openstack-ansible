@@ -1,0 +1,47 @@
+# please fill the hosts for the controller and compute groups
+# you can supply the same single host
+[controller]
+172.27.3.141
+
+[compute]
+172.27.3.141
+
+# please do not edit or remove the groups below
+[database:children]
+controller
+
+[keystone:children]
+controller
+
+[glance:children]
+controller
+
+[cinder-controller:children]
+controller
+
+[cinder:children]
+compute
+
+[nova-controller:children]
+controller
+
+[nova:children]
+compute
+
+[neutron-controller:children]
+controller
+
+[neutron:children]
+compute
+
+[heat:children]
+controller
+
+[ceilometer-controller:children]
+controller
+
+[ceilometer-nova:children]
+nova
+
+[horizon:children]
+controller
